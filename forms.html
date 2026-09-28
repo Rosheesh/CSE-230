@@ -1,0 +1,126 @@
+<!Doctype <html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport">
+        <title>Forms Demo</title>
+        <meta name="description" content="Forms Demo"> 
+    </head>
+    <body>
+        <h1>Forms Lab</h1>
+        <form action="#"methods="get">
+            <p>
+                <lable for="full-name">Full Name</lable>
+                <input 
+                type="text" 
+                id="full-name" 
+                name="fullName"
+                autocomplete="name" required/>
+            </p>
+            
+            <p>
+                <lable>
+                    Nickname
+                    <input 
+                    type="text" 
+                    name="nickname">
+                </lable>
+            </p>
+            <p>
+                <lable for="company">Company</lable>
+                <input type="text" 
+                id="company" 
+                name="company" 
+                placeholder="e.g. ABC Inc.">
+            </p>
+
+            <p>
+                <lable for="email">Email</lable>
+                <input 
+                type="email" 
+                id="email" 
+                name="email">
+            </p>
+
+            <p>
+                <label for="phone">Phone</label>
+                <input 
+                type="tel" 
+                id="phone" 
+                name="phone">
+            </p>
+
+            <p>
+                <lable for="postal-code">Postal Code</lable>
+                <input 
+                type="text" 
+                id="postal-code" 
+                name="postal code" 
+                inputmode="numeric">
+            </p>
+
+            <p>
+                <lable for="age">Age</lable>
+                <input 
+                type="number" 
+                id="age" 
+                name="age"
+                min="10"
+                max="50"
+                step="1">    
+            </p>
+            <p>
+                <lable for="website">Website</lable>
+                <input 
+                type="url" 
+                name="website" 
+                id="website">
+            </p>
+
+            <p>
+                <lable for="date-of-birth">Date of Birth</lable>
+                <input 
+                type="date" 
+                name="dateOfBirth" 
+                id="date-of-birth">
+            </p>
+            <P>
+                <label for="password">Password</label>
+                <input 
+                type="password" 
+                name="password" 
+                id="password"
+                autocomplete=" new-password"
+                minlength="8">
+            </P>
+            <button type="submit">Submit</button>
+            <fieldset>
+                <legend>Best time to contact me</legend>
+                <p>
+                    <input type="radio" id="time-morning" name="contactTime" value="morning">
+                    <label for="time-morning">Morning</label>
+                </p>
+                <p>
+                    <input type="radio" id="time-afternoon" name="contactTime" value="afternoon">
+                    <label for="time-afternoon">Afternoon</label>
+                </p>
+                <p>
+                    <input type="radio" id="time-evening" name="contactTime" value="evening">
+                    <label for="time-evening">Evening</label>
+                </p>
+            </fieldset>
+            <P>
+                <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                <label for="newsletter">send me occasional updates</label>
+            </P>
+                        <h2>4. Multi-line text and dropdowns</h2>
+
+            <p>
+                <label for="message">Message</label>
+                <br />
+                <textarea id="message" name="message rows="6" cols="40" required></textarea>
+            </p>
+        </form>
+    </body>
+
+</html>
