@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal portfolio of Rosish Dahal">
-    <title>Rosish Dahal - Personal Portfolio</title>
+    <meta name="description" content="Personal portfolio website of Rosish Dahal">
+    <title>Rosish Dahal | Personal Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Rosish Dahal - Personal Portfolio</h1>
+        <h1>Rosish Dahal</h1>
+
+        <p>University Student | Programmer | Web Development Enthusiast</p>
 
         <nav>
             <ul>
-                <li><a href="#about">About Me</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -22,27 +26,27 @@
         </nav>
     </header>
 
+
     <main>
 
         <section id="about">
             <h2>About Me</h2>
 
             <img src="images/profile.png"
-                 alt="Profile photograph of Rosish Dahal"
-                 width="200">
+                 alt="Profile photograph of Rosish Dahal">
 
             <p>
                 Hello! My name is Rosish Dahal. I am a university student
-                interested in web development, programming, and information
+                interested in programming, web development, and information
                 technology. I enjoy learning new technologies and developing
-                practical projects that improve my programming and problem-solving
-                skills.
+                practical projects that improve my technical and
+                problem-solving skills.
             </p>
 
             <p>
-                My goal is to continue developing my technical knowledge and
-                create useful software and web applications. This portfolio
-                presents some of my skills and projects.
+                My goal is to become a skilled IT professional and create
+                useful software and web applications. This portfolio
+                presents my technical skills, projects, and interests.
             </p>
         </section>
 
@@ -56,14 +60,16 @@
                     Used to create structured and semantic web pages.
                 </dd>
 
-                <dt>CSS</dt>
+                <dt>CSS3</dt>
                 <dd>
-                    Familiar with basic webpage styling and layout concepts.
+                    Used to create responsive layouts, colors, typography,
+                    spacing, and visual designs.
                 </dd>
 
                 <dt>Java</dt>
                 <dd>
-                    Used for object-oriented programming and application development.
+                    Used for object-oriented programming and application
+                    development.
                 </dd>
 
                 <dt>C++</dt>
@@ -73,53 +79,57 @@
 
                 <dt>Git and GitHub</dt>
                 <dd>
-                    Used for source-code management and publishing programming projects.
+                    Used for source-code management, version control,
+                    collaboration, and project deployment.
                 </dd>
             </dl>
         </section>
 
 
         <section id="projects">
-            <h2>Projects</h2>
+            <h2>My Projects</h2>
 
-            <article>
-                <h3>Project 1: Personal Portfolio Website</h3>
+            <div class="project-container">
 
-                <p>
-                    This project is a single-page personal portfolio created
-                    using semantic HTML5. It contains information about me,
-                    my technical skills, projects, and a contact form.
-                </p>
+                <article class="project-card">
+                    <h3>CalorieCare</h3>
 
-                <p>
-                    <a href="https://github.com/Rosheesh/personal-portfolio"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View Portfolio Repository
-                    </a>
-                </p>
-            </article>
+                    <p>
+                        CalorieCare is a calorie and nutrition tracking
+                        system designed to help users monitor their daily
+                        food intake, calories, and nutritional information.
+                    </p>
+
+                    <p>
+                        <a href="https://github.com/Rosheesh/caloriecare"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View GitHub Repository
+                        </a>
+                    </p>
+                </article>
 
 
-            <article>
-                <h3>Project 2: Workout Tracker</h3>
+                <article class="project-card">
+                    <h3>Personal Portfolio</h3>
 
-                <p>
-                    The Workout Tracker is a simple project designed to help
-                    users record exercises, sets, repetitions, and workout
-                    progress. It demonstrates basic programming and web
-                    development concepts.
-                </p>
+                    <p>
+                        This personal portfolio website was created using
+                        semantic HTML5 and custom CSS. It demonstrates
+                        responsive design, Flexbox, external CSS, and
+                        GitHub Pages deployment.
+                    </p>
 
-                <p>
-                    <a href="https://github.com/Rosheesh/workout-tracker"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        View Workout Tracker Repository
-                    </a>
-                </p>
-            </article>
+                    <p>
+                        <a href="https://github.com/Rosheesh/personal-portfolio"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            View GitHub Repository
+                        </a>
+                    </p>
+                </article>
 
+            </div>
         </section>
 
 
@@ -146,7 +156,6 @@
 
                 <p>
                     <label for="message">Message:</label>
-                    <br>
                     <textarea id="message"
                               name="message"
                               rows="6"
@@ -155,7 +164,7 @@
                 </p>
 
                 <p>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Send Message</button>
                 </p>
 
             </form>
@@ -165,10 +174,12 @@
 
 
     <footer>
-        <p>&copy; 2026 Rosish Dahal. All rights reserved.</p>
+        <p>
+            &copy; 2026 Rosish Dahal. All rights reserved.
+        </p>
 
         <p>
-            <a href="#about">Back to About</a>
+            <a href="#about">Back to Top</a>
         </p>
     </footer>
 

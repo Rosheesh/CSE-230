@@ -1,0 +1,268 @@
+/* ==============================
+   General Page Styling
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f4f7fb;
+    color: #222222;
+}
+
+
+/* ==============================
+   Header
+   ============================== */
+
+header {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 10px 0 25px;
+}
+
+
+/* ==============================
+   Navigation
+   ============================== */
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   Main Content
+   ============================== */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+section h2 {
+    color: #1f2937;
+    margin-top: 0;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 10px;
+}
+
+
+/* ==============================
+   About Section
+   ============================== */
+
+#about img {
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+#about p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ==============================
+   Skills Section
+   ============================== */
+
+#skills dl {
+    margin: 0;
+}
+
+#skills dt {
+    font-weight: bold;
+    color: #2563eb;
+    margin-top: 15px;
+}
+
+#skills dd {
+    margin-left: 20px;
+}
+
+
+/* ==============================
+   Projects Section
+   ============================== */
+
+.project-container {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    flex: 1;
+    min-width: 280px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 25px;
+    background-color: #f9fafb;
+}
+
+.project-card h3 {
+    color: #2563eb;
+    margin-top: 0;
+}
+
+.project-card a {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.project-card a:hover {
+    color: #1d4ed8;
+}
+
+
+/* ==============================
+   Contact Form
+   ============================== */
+
+form {
+    max-width: 600px;
+}
+
+form p {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #9ca3af;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* ==============================
+   Footer
+   ============================== */
+
+footer {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==============================
+   Responsive Design
+   ============================== */
+
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .project-container {
+        flex-direction: column;
+    }
+
+    .project-card {
+        min-width: 100%;
+    }
+
+    #about img {
+        width: 150px;
+        height: 150px;
+    }
+}
