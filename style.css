@@ -1,268 +1,282 @@
-/* ==============================
-   General Page Styling
-   ============================== */
 
+/* General page styling */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    background-color: #f4f7fb;
-    color: #222222;
+    background: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
 }
 
+.page-container {
+    width: min(100% - 32px, 1100px);
+    margin: 0 auto;
+    padding: 40px 0;
+}
 
-/* ==============================
-   Header
-   ============================== */
-
-header {
-    background-color: #1f2937;
-    color: white;
+.page-header {
     text-align: center;
-    padding: 40px 20px;
+    margin-bottom: 28px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+.page-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    margin-bottom: 10px;
 }
 
-header p {
-    margin: 10px 0 25px;
+.page-header p {
+    color: #64748b;
+    font-size: 1rem;
 }
 
+/* Main slider */
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #0f172a;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgb(15 23 42 / 15%);
+}
 
-/* ==============================
-   Navigation
-   ============================== */
+/* Visible image area */
+.slider-viewport {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
 
-nav ul {
+/* Horizontal sliding track */
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    transition: transform 450ms ease-in-out;
+    will-change: transform;
+}
+
+/* Individual slides */
+.slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    height: 100%;
     display: flex;
     justify-content: center;
-    gap: 30px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    align-items: center;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-
-/* ==============================
-   Main Content
-   ============================== */
-
-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px 20px;
-}
-
-section {
-    background-color: white;
-    margin-bottom: 30px;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-section h2 {
-    color: #1f2937;
-    margin-top: 0;
-    border-bottom: 2px solid #2563eb;
-    padding-bottom: 10px;
-}
-
-
-/* ==============================
-   About Section
-   ============================== */
-
-#about img {
+.slide img {
     display: block;
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 20px auto;
-}
-
-#about p {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-/* ==============================
-   Skills Section
-   ============================== */
-
-#skills dl {
-    margin: 0;
-}
-
-#skills dt {
-    font-weight: bold;
-    color: #2563eb;
-    margin-top: 15px;
-}
-
-#skills dd {
-    margin-left: 20px;
-}
-
-
-/* ==============================
-   Projects Section
-   ============================== */
-
-.project-container {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.project-card {
-    flex: 1;
-    min-width: 280px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 25px;
-    background-color: #f9fafb;
-}
-
-.project-card h3 {
-    color: #2563eb;
-    margin-top: 0;
-}
-
-.project-card a {
-    color: #2563eb;
-    font-weight: bold;
-}
-
-.project-card a:hover {
-    color: #1d4ed8;
-}
-
-
-/* ==============================
-   Contact Form
-   ============================== */
-
-form {
-    max-width: 600px;
-}
-
-form p {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input,
-textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #9ca3af;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 1rem;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
 }
 
-textarea {
-    resize: vertical;
-}
+/* Navigation arrows */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
 
-button {
-    background-color: #2563eb;
-    color: white;
+    width: 46px;
+    height: 46px;
     border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
+    border-radius: 50%;
+
+    background: rgb(15 23 42 / 70%);
+    color: white;
+    font-size: 22px;
     cursor: pointer;
-    font-size: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background 200ms ease;
 }
 
-button:hover {
-    background-color: #1d4ed8;
+.slider-button:hover {
+    background: #2563eb;
 }
 
+.slider-button:focus-visible,
+.slider-dot:focus-visible {
+    outline: 3px solid #60a5fa;
+    outline-offset: 3px;
+}
 
-/* ==============================
-   Footer
-   ============================== */
+.prev-button {
+    left: 16px;
+}
 
-footer {
-    background-color: #1f2937;
+.next-button {
+    right: 16px;
+}
+
+/* Navigation dots */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.slider-dot {
+    width: 11px;
+    height: 11px;
+    padding: 0;
+    border: 2px solid white;
+    border-radius: 50%;
+
+    background: rgb(255 255 255 / 50%);
+    cursor: pointer;
+
+    transition: background 250ms ease,
+                transform 250ms ease;
+}
+
+.slider-dot.active {
+    background: white;
+    transform: scale(1.25);
+}
+
+/* Slide counter */
+.slide-counter {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+
     color: white;
+    background: rgb(15 23 42 / 70%);
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* Footer */
+.page-footer {
     text-align: center;
-    padding: 25px 20px;
+    margin-top: 24px;
+    color: #64748b;
+    font-size: 0.9rem;
 }
 
-footer a {
-    color: white;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-
-/* ==============================
-   Responsive Design
-   ============================== */
-
+/* Tablet */
 @media (max-width: 768px) {
-
-    header h1 {
-        font-size: 2rem;
+    .page-container {
+        width: calc(100% - 24px);
+        padding: 28px 0;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+    .slider-viewport {
+        aspect-ratio: 16 / 9;
     }
 
-    main {
-        padding: 20px 15px;
+    .slider-button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
 
-    section {
-        padding: 20px;
+    .prev-button {
+        left: 10px;
     }
 
-    .project-container {
-        flex-direction: column;
+    .next-button {
+        right: 10px;
     }
 
-    .project-card {
-        min-width: 100%;
+    .slider-dots {
+        bottom: 14px;
+        gap: 8px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .page-container {
+        width: calc(100% - 20px);
+        padding: 28px 0;
     }
 
-    #about img {
-        width: 150px;
-        height: 150px;
+    .page-header {
+        margin-bottom: 24px;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .slider {
+        border-radius: 12px;
+    }
+
+    .slider-viewport {
+        aspect-ratio: 4 / 3;
+    }
+
+    .slider-button {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .prev-button {
+        left: 8px;
+    }
+
+    .next-button {
+        right: 8px;
+    }
+
+    .slider-dots {
+        bottom: 12px;
+        gap: 8px;
+    }
+
+    .slider-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .slide-counter {
+        top: 10px;
+        right: 10px;
+        font-size: 0.8rem;
+    }
+
+    .page-footer {
+        margin-top: 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .slider-track,
+    .slider-button,
+    .slider-dot {
+        transition: none;
     }
 }

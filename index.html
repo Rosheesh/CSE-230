@@ -1,187 +1,92 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal portfolio website of Rosish Dahal">
-    <title>Rosish Dahal | Personal Portfolio</title>
+    <meta name="description" content="A responsive image slider built with vanilla JavaScript.">
+
+    <title>Image Slider Library</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="slider.js" defer></script>
 </head>
-
 <body>
 
-    <header>
-        <h1>Rosish Dahal</h1>
+    <main class="page-container">
 
-        <p>University Student | Programmer | Web Development Enthusiast</p>
+        <header class="page-header">
+            <h1>Image Slider Library</h1>
+            <p>Explore beautiful places around the world.</p>
+        </header>
 
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        <section class="slider" aria-label="Image gallery">
 
+            <div class="slider-viewport">
+                <div class="slider-track" id="sliderTrack">
 
-    <main>
+                    <div class="slide">
+                        <img
+                            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=85"
+                            alt="Mountain landscape beneath a colorful sky"
+                        >
+                    </div>
 
-        <section id="about">
-            <h2>About Me</h2>
+                    <div class="slide">
+                        <img
+                            src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1600&q=85"
+                            alt="Ocean waves reaching the shore"
+                        >
+                    </div>
 
-            <img src="images/profile.png"
-                 alt="Profile photograph of Rosish Dahal">
+                    <div class="slide">
+                        <img
+                            src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=85"
+                            alt="Mountain lake surrounded by green hills"
+                        >
+                    </div>
 
-            <p>
-                Hello! My name is Rosish Dahal. I am a university student
-                interested in programming, web development, and information
-                technology. I enjoy learning new technologies and developing
-                practical projects that improve my technical and
-                problem-solving skills.
-            </p>
+                    <div class="slide">
+                        <img
+                            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=85"
+                            alt="Sunlight shining through a green forest"
+                        >
+                    </div>
 
-            <p>
-                My goal is to become a skilled IT professional and create
-                useful software and web applications. This portfolio
-                presents my technical skills, projects, and interests.
-            </p>
-        </section>
-
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-
-            <dl>
-                <dt>HTML5</dt>
-                <dd>
-                    Used to create structured and semantic web pages.
-                </dd>
-
-                <dt>CSS3</dt>
-                <dd>
-                    Used to create responsive layouts, colors, typography,
-                    spacing, and visual designs.
-                </dd>
-
-                <dt>Java</dt>
-                <dd>
-                    Used for object-oriented programming and application
-                    development.
-                </dd>
-
-                <dt>C++</dt>
-                <dd>
-                    Used for programming, algorithms, and data structures.
-                </dd>
-
-                <dt>Git and GitHub</dt>
-                <dd>
-                    Used for source-code management, version control,
-                    collaboration, and project deployment.
-                </dd>
-            </dl>
-        </section>
-
-
-        <section id="projects">
-            <h2>My Projects</h2>
-
-            <div class="project-container">
-
-                <article class="project-card">
-                    <h3>CalorieCare</h3>
-
-                    <p>
-                        CalorieCare is a calorie and nutrition tracking
-                        system designed to help users monitor their daily
-                        food intake, calories, and nutritional information.
-                    </p>
-
-                    <p>
-                        <a href="https://github.com/Rosheesh/caloriecare"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            View GitHub Repository
-                        </a>
-                    </p>
-                </article>
-
-
-                <article class="project-card">
-                    <h3>Personal Portfolio</h3>
-
-                    <p>
-                        This personal portfolio website was created using
-                        semantic HTML5 and custom CSS. It demonstrates
-                        responsive design, Flexbox, external CSS, and
-                        GitHub Pages deployment.
-                    </p>
-
-                    <p>
-                        <a href="https://github.com/Rosheesh/personal-portfolio"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            View GitHub Repository
-                        </a>
-                    </p>
-                </article>
-
+                </div>
             </div>
+
+            <button
+                class="slider-button prev-button"
+                type="button"
+                aria-label="Previous image"
+            >
+                &#10094;
+            </button>
+
+            <button
+                class="slider-button next-button"
+                type="button"
+                aria-label="Next image"
+            >
+                &#10095;
+            </button>
+
+            <div
+                class="slider-dots"
+                role="group"
+                aria-label="Choose an image"
+            ></div>
+
+            <p class="slide-counter" aria-live="polite">1 / 4</p>
+
         </section>
 
-
-        <section id="contact">
-            <h2>Contact Me</h2>
-
-            <form action="#" method="post">
-
-                <p>
-                    <label for="name">Name:</label>
-                    <input type="text"
-                           id="name"
-                           name="name"
-                           required>
-                </p>
-
-                <p>
-                    <label for="email">Email:</label>
-                    <input type="email"
-                           id="email"
-                           name="email"
-                           required>
-                </p>
-
-                <p>
-                    <label for="message">Message:</label>
-                    <textarea id="message"
-                              name="message"
-                              rows="6"
-                              cols="40"
-                              required></textarea>
-                </p>
-
-                <p>
-                    <button type="submit">Send Message</button>
-                </p>
-
-            </form>
-        </section>
+        <footer class="page-footer">
+            <p>Built using HTML, CSS, and vanilla JavaScript.</p>
+        </footer>
 
     </main>
-
-
-    <footer>
-        <p>
-            &copy; 2026 Rosish Dahal. All rights reserved.
-        </p>
-
-        <p>
-            <a href="#about">Back to Top</a>
-        </p>
-    </footer>
 
 </body>
 </html>
